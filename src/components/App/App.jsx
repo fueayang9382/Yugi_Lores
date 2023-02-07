@@ -22,7 +22,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import Epic1 from '../UserPageEpic1/Epic1';
 import './App.css';
 import Epic2 from '../UserPageEpic2/Epic2'; //TOU's Work
-import Epic3 from '../UserPageEpic2/Epic2';
+import Epic3 from '../UserPageEpic2/Epic2'; //TOU's Work
+import Card1Selected from '../UserPageEpic1/EpicCard_1Selected';
 function App() {
     const dispatch = useDispatch();
 
@@ -64,6 +65,11 @@ function App() {
                     {/* Tou's work */}
                     <ProtectedRoute exact path="/epic1">
                         <Epic1 />
+                    </ProtectedRoute>
+
+                    {/* Tou's work */}
+                    <ProtectedRoute exact path="/card1Selected">
+                        <Card1Selected />
                     </ProtectedRoute>
 
                     {/* Tou's work */}

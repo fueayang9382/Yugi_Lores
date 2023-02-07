@@ -1,12 +1,12 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'; //TOU's work
+import { useHistory } from 'react-router-dom'; 
 // This is one of our simplest components
 // It doesn't have local state,
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is'
 
-function Epic1() {
-    const history = useHistory();//Tou's work
+function Card1Selected() {
+    const history = useHistory();
 
     return (
         <div className="container">
@@ -16,18 +16,16 @@ function Epic1() {
                     A get.route will be placed here to fetch all fixed stories<br></br>
                     Each picture/text will have a onClick to bring user to edit mode. 
                 </p>
-                <p onClick={() => history.push('/card1Selected')}>card_1: Shi-en confronts his father's killer.</p>
-                <p>card_2: Hands tries to kill Shin but failed.</p>
-                <p>card_3: Shi-en's and Shogun Shin's blade clashed! </p>
-                <button>ADD more to Six Samurai Epic</button>
-                <button>DElETE ALL SIX SAMURAI EPIC</button>
+                <p>card_1: Shi-en confronts his father's killer.</p>
+                <button>Edit this post</button>
+                <button>Delete this Six Samurai EPIC</button>
                 <p>the^^ Add button will add picture to the epic </p>
-                <button onClick={() => history.push('/user')}>
-                    Go Back user's page
+                <button onClick={() => history.push('/epic1')}>
+                    Go Back Six Samurai Epic 
                 </button>
             </div>
         </div>
     );
 }
 
-export default Epic1;
+export default Card1Selected;

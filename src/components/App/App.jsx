@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-
+import Epic1 from '../UserPageEpic1/Epic1';
 import './App.css';
 
 function App() {
@@ -60,6 +60,14 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
+            {/* Tou's work */}
+          <ProtectedRoute
+          exact
+          path='/epic1'
+          >
+            <Epic1 />
+          </ProtectedRoute>
+
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
@@ -95,7 +103,6 @@ function App() {
               <RegisterPage />
             }
           </Route>
-
           <Route
             exact
             path="/home"

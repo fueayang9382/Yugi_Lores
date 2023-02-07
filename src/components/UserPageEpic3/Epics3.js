@@ -14,6 +14,7 @@ function Epic3() {
                     unfold.{' '}
                 </p>
                 <button>Go Back user's page</button>
+                {/* some how this home button works why? not hook up */}
             </div>
         </div>
     );

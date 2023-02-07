@@ -16,10 +16,10 @@ function UserPage() {
         <p onClick={()=>history.push('/epic1')}>epic 1: Six Samurai </p>
       </div>
       <div>
-        <p>epic 2:GaGaGiGo  </p>
+        <p onClick={()=>history.push('/epic2')}>epic 2:GaGaGiGo  </p>
       </div>
       <div>
-        <p>epic 3: Warrior Dai Grepher </p>
+        <p onClick={()=>history.push('/epic3')}>epic 3: Warrior Dai Grepher </p>
       </div>
     </div>
   );

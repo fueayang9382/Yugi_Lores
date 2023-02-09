@@ -18,7 +18,7 @@ function Epic1() {
                 </p>
                 <p onClick={() => history.push('/card1Selected')}>card_1: Shi-en confronts his father's killer.</p>
                 <p onClick={() => history.push('/card2Selected')}>card_2: Hands tries to kill Shin but failed.</p>
-                <p>card_3: Shi-en's and Shogun Shin's blade clashed! </p>
+                <p onClick={() => history.push('/card3Selected')}>card_3: Shi-en's and Shogun Shin's blade clashed! </p>
                 <button>ADD more to Six Samurai Epic</button>
                 <button>DElETE ALL SIX SAMURAI EPIC</button>
                 <p>the^^ Add button will add picture to the epic </p>

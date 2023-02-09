@@ -5,21 +5,21 @@ import { useHistory } from 'react-router-dom';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is'
 
-function Card2Edit() {
+function Card3Edit() {
     const history = useHistory();
 
     return (
         <div className="container">
             <div>
-                <p>card_2: click here should show up the three card selection.<br></br>
+                <p>card_3: click here should show up the three card selection.<br></br>
                 Make another page or make it pop up here. 
                 </p>
-                <p>Hands tries to kill Shin but failed. </p>
+                <p>Shi-en's and Shogun Shin's blade clashed! </p>
                 <p>this part will need a state to type in the input.</p>
-                <p>pressing the update should update the this story. </p>
                 <button>Update</button>
+                <p>pressing the update should update the this story. </p>
                 <input placeholder='Rewrite this part'></input>
-                <button onClick={() => history.push('/card2Selected')}>
+                <button onClick={() => history.push('/card3Selected')}>
                     Go Back to single Epic selection 
                 </button>
             </div>
@@ -27,4 +27,4 @@ function Card2Edit() {
     );
 }
 
-export default Card2Edit;
+export default Card3Edit;

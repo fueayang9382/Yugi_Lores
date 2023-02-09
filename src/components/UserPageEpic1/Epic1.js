@@ -17,7 +17,7 @@ function Epic1() {
                     Each picture/text will have a onClick to bring user to edit mode. 
                 </p>
                 <p onClick={() => history.push('/card1Selected')}>card_1: Shi-en confronts his father's killer.</p>
-                <p>card_2: Hands tries to kill Shin but failed.</p>
+                <p onClick={() => history.push('/card2Selected')}>card_2: Hands tries to kill Shin but failed.</p>
                 <p>card_3: Shi-en's and Shogun Shin's blade clashed! </p>
                 <button>ADD more to Six Samurai Epic</button>
                 <button>DElETE ALL SIX SAMURAI EPIC</button>

@@ -29,6 +29,12 @@ import Card2Selected from '../UserPageEpic1/EpicCard_2Selected';
 import Card2Edit from '../UserPageEpic1/EpicCard_2SSEdit';
 import Card3Selected from '../UserPageEpic1/EpicCard_3Selected';
 import Card3Edit from '../UserPageEpic1/EpicCard_3SSEdit';
+////////////////////////////Epic2
+////////////////////////////Epic2
+////////////////////////////Epic2
+////////////////////////////Epic2
+import Card1GaSelected from '../UserPageEpic2/EpicCard_1GaSelected';
+import Card1GaEdit from '../UserPageEpic2/EpicsCard_2GaEdit';
 function App() {
     const dispatch = useDispatch();
 
@@ -72,31 +78,32 @@ function App() {
                         <Epic1 />
                     </ProtectedRoute>
 
-                    {/* Tou's work */}
+                    {/* Tou's work: card 1 selection */}
                     <ProtectedRoute exact path="/card1Selected">
                         <Card1Selected />
                     </ProtectedRoute>
 
-                    {/* Tou's work */}
+                    {/* Tou's work: Card 1 Edit */}
                     <ProtectedRoute exact path="/Card1Edit">
                         <Card1Edit />
                     </ProtectedRoute>
 
-                    {/* Tou's work */}
+                    {/* Tou's work card 2 selection */}
                     <ProtectedRoute exact path="/card2Selected">
                         <Card2Selected />
                     </ProtectedRoute>
 
-                    {/* Tou's work */}
+                    {/* Tou's work Card 2 Edit  */}
                     <ProtectedRoute exact path="/Card2Edit">
                         <Card2Edit />
                     </ProtectedRoute>
 
-                    {/* Tou's work */}
+                    {/* Tou's work card 3 Selection */}
                     <ProtectedRoute exact path="/card3Selected">
                         <Card3Selected />
                     </ProtectedRoute>
 
+                     {/* Tou's work card 3 edit */}
                     <ProtectedRoute exact path="/Card3Edit">
                         <Card3Edit />
                     </ProtectedRoute>
@@ -105,10 +112,27 @@ function App() {
                     {/* ////////////////////////////////////////////////////// */}
                     {/* ////////////////////////////////////////////////////// */}
                     {/* ////////////////////////////////////////////////////// */}
-                    {/* Tou's work */}
+                    {/* Tou's work Show me th epics*/}
                     <ProtectedRoute exact path="/epic2">
                         <Epic2 />
                     </ProtectedRoute>
+
+                    {/* Tou's work: selection */}
+                    <ProtectedRoute exact path="/card1GaSelected">
+                        <Card1GaSelected />
+                    </ProtectedRoute>
+
+
+                    <ProtectedRoute exact path="/Card1GaEdit">
+                        <Card1GaEdit />
+                    </ProtectedRoute>
+
+
+                    {/* ////////////////////////////////////////////////////// */}
+                    {/* ////////////////////////////////////////////////////// */}
+                    {/* ////////////////////////////////////////////////////// */}
+                    {/* ////////////////////////////////////////////////////// */}
+                    {/* ////////////////////////////////////////////////////// */}
 
                     {/* Tou's work */}
                     <ProtectedRoute exact path="/epic3">

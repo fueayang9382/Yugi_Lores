@@ -11,13 +11,12 @@ function Card1GaEdit() {
     return (
         <div className="container">
             <div>
-                <p>card_1Ga: This is Card 1Ga.<br></br>
-                Make another page or make it pop up here. 
+                <p>card_1GaGaGiGo: 
                 </p>
-                <p>This is Card 1Ga.</p>
+                <p>This should be Card 1 GaGaGiGo Description 1 </p>
                 <p>this part will need a state to type in the input.</p>
-                <p>pressing the update should update the this story. </p>
                 <button>Update</button>
+                <p>pressing the update should update the this story. </p>
                 <input placeholder='Rewrite this part'></input>
                 <button onClick={() => history.push('/card1GaSelected')}>
                     Go Back to single Epic selection 
@@ -28,3 +27,5 @@ function Card1GaEdit() {
 }
 
 export default Card1GaEdit;
+
+

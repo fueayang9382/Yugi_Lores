@@ -5,21 +5,21 @@ import { useHistory } from 'react-router-dom';
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is'
 
-function Card1GaSelected() {
+function Card3GaSelected() {
     const history = useHistory();
 
     return (
         <div className="container">
             <div>
-                <p>Card_1Ga: This young evildoer used to have an evil heart, but by meeting a special person, he discovered justice. </p>
-                <button onClick={() => history.push('/Card1GaEdit')}>Edit this post</button>
+                <p>Card_3Ga: Card 3 description 3. </p>
+                <button onClick={() => history.push('/Card3GaEdit')}>Edit this post</button>
                 <button>Delete this GaGaGiGo EPIC</button>
                 <button onClick={() => history.push('/epic2')}>
-                    Go Back to GaGaGiGo Epic 
+                    Go Back Six Samurai Epic 
                 </button>
             </div>
         </div>
     );
 }
 
-export default Card1GaSelected;
+export default Card3GaSelected;

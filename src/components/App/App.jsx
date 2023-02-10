@@ -34,7 +34,9 @@ import Card3Edit from '../UserPageEpic1/EpicCard_3SSEdit';
 ////////////////////////////Epic2
 ////////////////////////////Epic2
 import Card1GaSelected from '../UserPageEpic2/EpicCard_1GaSelected';
-import Card1GaEdit from '../UserPageEpic2/EpicsCard_2GaEdit';
+import Card1GaEdit from '../UserPageEpic2/EpicCard_1GaEdit';
+import Card2GaSelected from '../UserPageEpic2/EpicCard_2GaSelected';
+import Card2GaEdit from '../UserPageEpic2/EpicCard_2GaEdit';
 function App() {
     const dispatch = useDispatch();
 
@@ -103,7 +105,7 @@ function App() {
                         <Card3Selected />
                     </ProtectedRoute>
 
-                     {/* Tou's work card 3 edit */}
+                    {/* Tou's work card 3 edit */}
                     <ProtectedRoute exact path="/Card3Edit">
                         <Card3Edit />
                     </ProtectedRoute>
@@ -117,16 +119,25 @@ function App() {
                         <Epic2 />
                     </ProtectedRoute>
 
-                    {/* Tou's work: selection */}
+                    {/* Tou's work: epic 2 card 1 selection */}
                     <ProtectedRoute exact path="/card1GaSelected">
                         <Card1GaSelected />
                     </ProtectedRoute>
 
-
+                    {/* Tou's work: epic 2 card 1 edit */}
                     <ProtectedRoute exact path="/Card1GaEdit">
                         <Card1GaEdit />
                     </ProtectedRoute>
 
+                    {/* Tou's work: epic 2 card 2 selection */}
+                    <ProtectedRoute exact path="/card2GaSelected">
+                        <Card2GaSelected />
+                    </ProtectedRoute>
+
+                    {/* Tou's work: epic 2 card 1 edit */}
+                    <ProtectedRoute exact path="/Card2GaEdit">
+                        <Card2GaEdit />
+                    </ProtectedRoute>
 
                     {/* ////////////////////////////////////////////////////// */}
                     {/* ////////////////////////////////////////////////////// */}

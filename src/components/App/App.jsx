@@ -5,14 +5,10 @@ import {
     Route,
     Switch,
 } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
-
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
@@ -37,6 +33,16 @@ import Card1GaSelected from '../UserPageEpic2/EpicCard_1GaSelected';
 import Card1GaEdit from '../UserPageEpic2/EpicCard_1GaEdit';
 import Card2GaSelected from '../UserPageEpic2/EpicCard_2GaSelected';
 import Card2GaEdit from '../UserPageEpic2/EpicCard_2GaEdit';
+////////////////////////////Epic3
+////////////////////////////Epic3
+////////////////////////////Epic3
+////////////////////////////Epic3
+////////////////////////////Epic3
+////////////////////////////Epic3
+
+
+
+
 function App() {
     const dispatch = useDispatch();
 

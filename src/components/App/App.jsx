@@ -22,7 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import Epic1 from '../UserPageEpic1/Epic1';
 import './App.css';
 import Epic2 from '../UserPageEpic2/Epic2'; //TOU's Work
-import Epic3 from '../UserPageEpic2/Epic2'; //TOU's Work
+import Epic3 from '../UserPageEpic3/Epics3'; //TOU's Work
 import Card1Selected from '../UserPageEpic1/EpicCard_1Selected';
 import Card1Edit from '../UserPageEpic1/EpicCard_1SSEdit';
 import Card2Selected from '../UserPageEpic1/EpicCard_2Selected';

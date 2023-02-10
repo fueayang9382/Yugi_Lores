@@ -11,7 +11,7 @@ function Epic3() {
             <div>
                 <p>
                     This is where all of the Warrior Dai Grepher will epics will
-                    unfold.{' '}
+                    unfold. 
                 </p>
                 <button>Go Back user's page</button>
                 {/* some how this home button works why? not hook up */}

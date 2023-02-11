@@ -39,9 +39,8 @@ import Card2GaEdit from '../UserPageEpic2/EpicCard_2GaEdit';
 ////////////////////////////Epic3
 ////////////////////////////Epic3
 ////////////////////////////Epic3
-
-
-
+import Card1DaiSelected from '../UserPageEpic3/EpicsCard_1DaiSelected';
+import Card1DaiEdit from '../UserPageEpic3/EpicsCard_1DaiEdit';
 
 function App() {
     const dispatch = useDispatch();
@@ -154,6 +153,16 @@ function App() {
                     {/* Tou's work */}
                     <ProtectedRoute exact path="/epic3">
                         <Epic3 />
+                    </ProtectedRoute>
+
+                    {/* Tou's work: epic 3 card 1 selection */}
+                    <ProtectedRoute exact path="/Card1DaiSelected">
+                        <Card1DaiSelected />
+                    </ProtectedRoute>
+
+                    {/* Tou's work: epic 3 card 1 edit */}
+                    <ProtectedRoute exact path="/Card1DaiEdit">
+                        <Card1DaiEdit />
                     </ProtectedRoute>
 
                     <ProtectedRoute

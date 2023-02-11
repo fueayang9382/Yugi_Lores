@@ -7,11 +7,11 @@ import { useHistory } from 'react-router-dom';
 
 function Epic3() {
     const history = useHistory();
-    
+
     return (
         <div className="container">
             <div>
-                <p>card_1Dai: Normale Warrior Dai Grepher </p>
+                <p onClick={() => history.push('/Card1DaiSelected')}>card_1Dai: Normale Warrior Dai Grepher </p>
                 <p>card_2Dai: Evil Warrior Dai Grepher  who chose evil. </p>
                 <p>card_3Dai: Light Warrior Dai Grepher who chose to walk on the walk of light. </p>
                 <button onClick={() => history.push('/user')}>Go Back user's page</button>

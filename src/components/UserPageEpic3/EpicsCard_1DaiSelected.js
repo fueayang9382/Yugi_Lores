@@ -14,7 +14,7 @@ function Card1DaiSelected() {
                 <p>card_1Dai: Normale Warrior Dai Grepher </p>
                 <button onClick={() => history.push('/smfl')}>Edit this post</button>
                 <button>Delete this GaGaGiGo EPIC</button>
-                <button onClick={() => history.push('/epic3')}>
+                <button onClick={() => history.push('/user')}>
                     Go Back to Warrior Dai Grepher Epic 
                 </button>
             </div>

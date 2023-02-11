@@ -1,31 +1,40 @@
 import React from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function UserPage() {
     // this component doesn't do much to start, just renders some user reducer info to the DOM
     const user = useSelector((store) => store.user);
     const history = useHistory();
+    const image = useSelector((store) => store.imageReducer);
+    const dispatch = useDispatch();
+    console.log(image);
+    useEffect(() => {
+        dispatch({
+            type: 'SAGA/FETCH_IMAGE',
+        });
+    }, []);
+
     return (
-        <div className="container">
-            <h2>Welcome, {user.username}!</h2>
-            <p>Your ID is: {user.id}</p>
-            <LogOutButton className="btn" />
-            <div>
-                <p onClick={() => history.push('/epic1')}>
-                    epic 1: Six Samurai{' '}
-                </p>
+        <>
+            <div className="container">
+                <h2>Welcome, {user.username}!</h2>
+                <p>Your ID is: {user.id}</p>
+                <LogOutButton className="btn" />
+                <div>
+                    {image.map &&
+                        image.map((image) => (
+                            <img
+                                onClick={() => history.push('/epic1')}
+                                key={image.id}
+                                src={image.card_1}
+                            />
+                        ))}
+                </div>
             </div>
-            <div>
-                <p onClick={() => history.push('/epic2')}>epic 2:GaGaGiGo </p>
-            </div>
-            <div>
-                <p onClick={() => history.push('/epic3')}>
-                    epic 3: Warrior Dai Grepher{' '}
-                </p>
-            </div>
-        </div>
+        </>
     );
 }
 

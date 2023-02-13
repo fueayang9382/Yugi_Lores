@@ -40,9 +40,10 @@ router.get('/', (req, res) => {
         });
 });
 
-// get route fetch all the data from table using table ID
+// get route fetch all the data from table using table ID*Randy
+//this a get route for one epic: to edit just that one card.
 router.get('/editStory/:id', (req, res) => {
-    let storyId = req.params.id
+    let storyId = req.params.id;
     let sqlValues = [storyId];
     let sqlQuery = `
     SELECT * from "stories"
@@ -50,7 +51,7 @@ router.get('/editStory/:id', (req, res) => {
     `;
     pool.query(sqlQuery, sqlValues)
         .then((dbRes) => {
-            res.send(dbRes.rows);
+            res.send(dbRes.rows[0]); //[0] was added from video lecture@20:25
         })
         .catch((dbErr) => {
             console.log('get route broke', dbErr);
@@ -86,7 +87,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
 ///TOU delete route
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
-    const sqlValues = [req.params.id]
+    const sqlValues = [req.params.id];
     console.log('this is sqlValues', sqlValues);
     const sqlQuery = `DELETE FROM "stories" WHERE "id" = $1`;
     pool.query(sqlQuery, sqlValues)
@@ -100,6 +101,26 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
 });
 ///TOU delete route
 
+//Tou put route
+router.put('/editStory/:id', (req, res) => {
+    // Update this single student
+    console.log('THIS IS THE ID WE"RE CHANGING', req.params.id)
+    console.log('THIS IS THE body', req.body)
 
+    const idToUpdate = req.params.id;
+    const sqlText = `
+      UPDATE stories
+        SET story_text=$1
+        WHERE id=$2
+    `;
+    pool.query(sqlText, [req.body.story_text, idToUpdate])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`Error in put route ${sqlText}`, error);
+            res.sendStatus(500);
+        });
+});
 
 module.exports = router;

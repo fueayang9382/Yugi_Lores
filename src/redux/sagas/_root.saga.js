@@ -6,6 +6,11 @@ import imageSaga from './getImage.saga';
 import storySaga from './fetchStory.saga';
 import addStorySaga from './addStory.saga'; 
 import watchDeleteStory from './deleteStory.saga'; //delete if not working
+//Matt edit vid lecture imports
+import ActionDoEpicEdit from './EpicToEdit/EpicToEdit.saga';//causing error:ReferenceError: takeLatest is not defined
+
+
+
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -21,6 +26,8 @@ export default function* rootSaga() {
     imageSaga(),
     storySaga(),
     addStorySaga(),
-    watchDeleteStory()//Tou: delete if not working
+    watchDeleteStory(),
+    ActionDoEpicEdit(), //causing error:ReferenceError: takeLatest is not defined
+    
   ]);
 }

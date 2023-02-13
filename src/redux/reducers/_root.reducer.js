@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import imageReducer from './image.reducer';
 import storyReducer from './story.reducer';
+import storyToEdit from './storyToEdit';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -14,7 +15,7 @@ const rootReducer = combineReducers({
   user,
   imageReducer,
   storyReducer,
-  storyReducer // delete if dom crash
+  storyToEdit
 });
 
 export default rootReducer;

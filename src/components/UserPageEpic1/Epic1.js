@@ -62,6 +62,7 @@ function Epic1() {
     const handleEdit = (story)=>{
         history.push(`/epic1/edits/${story.id}`);
     }
+    
     return (
         <div className="container">
             <div>

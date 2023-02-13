@@ -3,13 +3,12 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* addStory(action) {
     try {
-        
+        console.log('what is action.payload', action.payload);
         const response = yield axios({
             method: 'POST',
             url: '/card',
-            data : action.payload
+            data : action.payload // this should be userStory{} 
         });
-
         yield put({
             type: 'SAGA/FETCH_STORY',
         });

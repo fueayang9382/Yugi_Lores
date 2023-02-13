@@ -6,27 +6,25 @@ function* fetchStory() {
         // GET THE FRUIT FROM THE SERVER!
         const response = yield axios({
             method: 'GET',
-            url: '/card/story'
-        })
-  
+            url: '/card/story',
+        });
+
         // WOOT. HERE'S THE FRUIT:
-        let storyText = response.data
-        console.log(storyText);
+        let storyText = response.data;
+        console.log('In the fetchStory saga, what is  storyText?:', storyText);
         // WOO! NOW, PUT THAT FRUIT IN THE
         // basketReducer:
         yield put({
             type: 'SET_STORY',
-            payload: storyText
-        })
+            payload: storyText, //userStory{}
+        });
     } catch (error) {
-        console.log('fetchStory error:', error)
+        console.log('fetchStory error:', error);
     }
-  }
+}
 
-  function* storySaga() {
+function* storySaga() {
     yield takeLatest('SAGA/FETCH_STORY', fetchStory);
-  }
-  
-  
+}
 
-  export default storySaga
+export default storySaga;

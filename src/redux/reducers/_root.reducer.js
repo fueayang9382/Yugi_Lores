@@ -13,7 +13,8 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user,
   imageReducer,
-  storyReducer // will have an id and username if someone is logged in
+  storyReducer,
+  storyReducer // delete if dom crash
 });
 
 export default rootReducer;

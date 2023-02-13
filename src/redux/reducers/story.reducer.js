@@ -1,9 +1,9 @@
 const storyReducer = (state = {}, action) => {
     switch (action.type) {
         case 'SET_STORY':
-            return action.payload;
+            return action.payload;// must be the userStory{}
         default:
-            return state;
+            return state;// this is just returning an empty object{}
     }
 };
 

@@ -16,6 +16,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import Epic1 from '../UserPageEpic1/Epic1';
+import EditEpic1Form from '../editEpic1Form/EditEpic1Form';
 import './App.css';
 import Epic2 from '../UserPageEpic2/Epic2'; //TOU's Work
 import Epic3 from '../UserPageEpic3/Epics3'; //TOU's Work
@@ -85,6 +86,18 @@ function App() {
                         <Epic1 />
                     </ProtectedRoute>
 
+                    <Route exact path="/epic1/edits/:id">
+                    <EditEpic1Form />
+                    </Route>
+
+
+
+
+
+
+
+
+                    {/*//////////NOT USING ANYMORE////////// */}
                     {/* Tou's work: card 1 selection */}
                     <ProtectedRoute exact path="/card1Selected">
                         <Card1Selected />

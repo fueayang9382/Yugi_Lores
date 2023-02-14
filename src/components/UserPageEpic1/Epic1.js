@@ -66,6 +66,7 @@ function Epic1() {
     return (
         <div className="container">
             <div>
+            <p>This is SOLO + this it make solo more than just CRUD</p>
                 {image.map &&
                     image.map((image) => (
                         <img key={image.id} src={image.card_1} />

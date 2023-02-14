@@ -62,7 +62,7 @@ function Epic1() {
     const handleEdit = (story)=>{
         history.push(`/epic1/edits/${story.id}`);
     }
-    
+
     return (
         <div className="container">
             <div>
@@ -70,23 +70,30 @@ function Epic1() {
                     image.map((image) => (
                         <img key={image.id} src={image.card_1} />
                     ))}
-                {storyText.map && 
-                    storyText.map((story) => {
-                        return <div key={story.id}><p>{story.story_text} </p> 
-                        <button onClick={()=> {console.log(`some bullshit 666 ${story.id}`);deleteStory(story.id)}}>
-                            Delete this description
-                        </button>
-                        <button onClick={(()=>handleEdit(story))}>Edit epic</button>
-                        </div>;
-                    })}
-
-                <input
+                                    <input
                     type="text"
                     value={story} //setStory will set story. 
                     placeholder="Your Story Goes Here"
                     onChange={(event) => setStory(event.target.value)}
                 />
                 <button onClick={addStory}>Submit</button>
+                {storyText.map && 
+                    storyText.map((story) => {
+                        return <div key={story.id}><p>{story.story_text} </p> 
+                        <button onClick={()=> {console.log(` find this log ${story.id}`);deleteStory(story.id)}}>
+                            Delete this description
+                        </button>
+                        <button onClick={(()=>handleEdit(story))}>Edit epic</button>
+                        </div>;
+                    })}
+
+                {/* <input
+                    type="text"
+                    value={story} //setStory will set story. 
+                    placeholder="Your Story Goes Here"
+                    onChange={(event) => setStory(event.target.value)}
+                />
+                <button onClick={addStory}>Submit</button> */}
 
                 {/* /////////////////////////////////////////////////////////////////// */}
                 {/* /////////////////////////////////////////////////////////////////// */}

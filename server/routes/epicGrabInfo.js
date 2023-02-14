@@ -104,12 +104,12 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
 //Tou put route
 router.put('/editStory/:id', (req, res) => {
     // Update this single student
-    console.log('THIS IS THE ID WE"RE CHANGING', req.params.id)
-    console.log('THIS IS THE body', req.body)
+    console.log('THIS IS THE ID WE"RE CHANGING', req.params.id);
+    console.log('THIS IS THE body', req.body);
 
     const idToUpdate = req.params.id;
     const sqlText = `
-      UPDATE stories
+        UPDATE stories
         SET story_text=$1
         WHERE id=$2
     `;

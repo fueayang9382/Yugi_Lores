@@ -9,6 +9,7 @@ function UserPage() {
     const user = useSelector((store) => store.user);
     const history = useHistory();
     const image = useSelector((store) => store.imageReducer);
+    const storyText = useSelector((store) => store.storyReducer);
     const dispatch = useDispatch();
     console.log(image);
     useEffect(() => {
@@ -32,6 +33,22 @@ function UserPage() {
                                 src={image.card_1}
                             />
                         ))}
+                </div>
+                <p>
+                    <b>The Six Samurai Epic</b>
+                </p>
+                <div>
+                    {storyText.map &&
+                        storyText.map((story) => {
+                            return (
+                                <div key={story.id}>
+                                    <ul>
+                                    <li>{story.story_text} </li>
+                                    </ul>
+                                    {() => {console.log(` find this log ${story.id}`);deleteStory(story.id);}}
+                                </div>
+                            );
+                        })}
                 </div>
             </div>
         </>

@@ -46,20 +46,20 @@ function UserPage() {
                         {x.title}{' '}
                     </div>
                 ))}
-            <div onClick={() => history.push('/epic1')}>
+            <div onClick={() => history.push('/epic1/1')}>
                 <p>
                     <b>Six Samurai</b>
                 </p>
                 <img src="./myImages/six.png" />
             </div>
 
-            <div>
+            <div onClick={() => history.push('epic1/2')}>
                 <p>
                     <b>WARRIOR DAI GREPHER!</b>
                 </p>
                 <img src="./myImages/daigrepher.jpg" />
             </div>
-            <div>
+            <div onClick={() => history.push('/epic1/3')}>
                 <p>
                     <b>GaGaGigo</b>
                 </p>

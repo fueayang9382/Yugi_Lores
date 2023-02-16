@@ -11,7 +11,7 @@ function UserPage() {
     const history = useHistory();
     const image = useSelector((store) => store.imageReducer);
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         dispatch({
             type: 'SAGA/FETCH_IMAGE',
@@ -29,38 +29,45 @@ function UserPage() {
     const handleStoryPage = (x) => {
         dispatch({
             type: 'SAGA/FETCH_ID_TEXT',
-            payload: x.id 
+            payload: x.id,
         });
-        history.push(`/epic1/${x.id}`)
+        history.push(`/epic1/${x.id}`);
         console.log('*******this is the images ID', x.id);
-    }
+    };
 
     return (
         <>
-            {image.map && image.map((x)=>
-                <div key={x.id} onClick={()=> handleStoryPage(x)}>{x.title}</div>
-            )}
+            {image.map &&
+                image.map((x) => (
+                    <div key={x.id} onClick={() => handleStoryPage(x)}>
+                        {x.title}{' '}
+                    </div>
+                ))}
+            <div onClick={() => history.push('/epic1')}>
+                <p>
+                    <b>Six Samurai</b>
+                </p>
+                <img src="./myImages/six.png" />
+            </div>
+
+            <div>
+                <p>
+                    <b>WARRIOR DAI GREPHER!</b>
+                </p>
+                <img src="./myImages/daigrepher.jpg" />
+            </div>
+            <div>
+                <p>
+                    <b>GaGaGigo</b>
+                </p>
+                <img src="./myImages/gaga.png" />
+            </div>
         </>
     );
 }
 
 // this allows us to use <App /> in index.js
 export default UserPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // {/* <div className="container">
 //                 <h2>Welcome, {user.username}!</h2>

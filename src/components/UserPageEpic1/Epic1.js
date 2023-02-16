@@ -131,7 +131,7 @@ function Epic1() {
                                 >
                                     Delete this description
                                 </button>
-                             
+                                <button onClick={(()=>handleEdit(story))}>Edit epic</button>
                             </div>
                         );
                     })}
@@ -153,7 +153,7 @@ function Epic1() {
                                 <button onClick={()=> {console.log(` find this log ${oneText.id}`);deleteStory(oneText.id)}}>
                             Delete this description
                         </button>
-                        <button onClick={(()=>handleEdit(oneText.id))}>Edit epic</button>
+                                <button>Edit</button>
                             </div>
                             
                         );

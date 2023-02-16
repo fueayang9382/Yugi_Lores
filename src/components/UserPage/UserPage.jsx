@@ -37,6 +37,9 @@ function UserPage() {
 
     return (
         <>
+        <h2>Welcome, {user.username}</h2>
+        <p>Your ID is: {user.id}</p>
+        <p><b>Epic List</b></p>
             {image.map &&
                 image.map((x) => (
                     <div key={x.id} onClick={() => handleStoryPage(x)}>

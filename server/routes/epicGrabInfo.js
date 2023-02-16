@@ -7,15 +7,21 @@ const {
 } = require('../modules/authentication-middleware');
 
 //this route gets all the data from the story table using user/epic id
-router.get('/story', (req, res) => {
+router.get('/story/:id', rejectUnauthenticated, (req, res) => {//'/story' original
     let userId = req.user.id;
-    let epicId = req.body.epic_id;
-    console.log(epicId);
-    let sqlValues = [userId];
+    let epicId = req.params.id;
+    
+    let sqlValues = [epicId , userId];
     let sqlQuery = `
-    SELECT * from "stories"
-	WHERE "user_id" = $1;
-    `;
+    SELECT * FROM "stories"
+    WHERE "epic_id" = $1
+    AND "user_id" =$2;
+    `;/////// this should work for grabTextNId
+    console.log('333333 what is userId:', userId);
+    console.log('333333 what is epicId:', epicId);
+    // // SELECT * from "stories"
+	//  SELECT * from "stories" old sql command
+	// WHERE "user_id" = $1
     pool.query(sqlQuery, sqlValues)
         .then((dbRes) => {
             res.send(dbRes.rows);
@@ -25,6 +31,8 @@ router.get('/story', (req, res) => {
             res.sendStatus(500);
         });
 });
+
+
 //this route only grabs the data from the epic table
 router.get('/', (req, res) => {
     let sqlQuery = `
@@ -33,6 +41,24 @@ router.get('/', (req, res) => {
     pool.query(sqlQuery)
         .then((dbRes) => {
             res.send(dbRes.rows);
+        })
+        .catch((dbErr) => {
+            console.log('get route broke', dbErr);
+            res.sendStatus(500);
+        });
+});
+
+//this route renders image using the id
+router.get('/detail/:id', (req, res) => {
+    let sqlQuery = `
+    SELECT * from "epic"
+        WHERE "id" = $1;
+    `;
+    let sqlValues = [req.params.id]
+    console.log(sqlValues);
+    pool.query(sqlQuery , sqlValues)
+        .then((dbRes) => {
+            res.send(dbRes.rows[0]);
         })
         .catch((dbErr) => {
             console.log('get route broke', dbErr);
@@ -51,7 +77,7 @@ router.get('/editStory/:id', (req, res) => {
     `;
     pool.query(sqlQuery, sqlValues)
         .then((dbRes) => {
-            res.send(dbRes.rows[0]); //[0] was added from video lecture@20:25
+            res.send(dbRes.rows[0]); 
         })
         .catch((dbErr) => {
             console.log('get route broke', dbErr);
@@ -68,10 +94,10 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     const sqlQuery = `INSERT INTO "stories" 
                         ("epic_id", "user_id", "story_text")
                         VALUES 
-                        (1, $1, $2);`;
+                        ($1, $2, $3);`;
 
     const sqlValues = [
-        // dataToSend.epic_id,
+        dataToSend.epic_id,
         userId,
         dataToSend.story_text,
     ];
@@ -104,16 +130,16 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
 //Tou put route
 router.put('/editStory/:id', (req, res) => {
     // Update this single student
-    console.log('THIS IS THE ID WE"RE CHANGING', req.params.id);
-    console.log('THIS IS THE body', req.body);
+    console.log('THIS IS THE ID WE"RE CHANGING', req.params.id);//*** */
+    console.log('THIS IS THE body', req.body);//** */
 
-    const idToUpdate = req.params.id;
+    const idToUpdate = req.params.id;//** */
     const sqlText = `
         UPDATE stories
         SET story_text=$1
         WHERE id=$2
     `;
-    pool.query(sqlText, [req.body.story_text, idToUpdate])
+    pool.query(sqlText, [req.body.story_text, idToUpdate])//*** */
         .then((result) => {
             res.sendStatus(200);
         })

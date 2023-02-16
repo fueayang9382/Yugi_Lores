@@ -6,9 +6,10 @@ import imageSaga from './getImage.saga';
 import storySaga from './fetchStory.saga';
 import addStorySaga from './addStory.saga'; 
 import watchDeleteStory from './deleteStory.saga'; //delete if not working
+import detailImageSaga from './getIdOfImage.saga';
 //Matt edit vid lecture imports
 import ActionDoEpicEdit from './EpicToEdit/EpicToEdit.saga';//causing error:ReferenceError: takeLatest is not defined
-
+import FetchTextNId from './fetchText.saga';
 
 
 // rootSaga is the primary saga.
@@ -24,10 +25,10 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     imageSaga(),
-    storySaga(),
     addStorySaga(),
     watchDeleteStory(),
-    ActionDoEpicEdit(), //causing error:ReferenceError: takeLatest is not defined
-    
+    ActionDoEpicEdit(),
+    detailImageSaga(),
+    FetchTextNId() // shong told me to create new saga function  
   ]);
 }

@@ -3,6 +3,7 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchCardImage() {
     try {
+        
         // GET THE FRUIT FROM THE SERVER!
         const response = yield axios({
             method: 'GET',

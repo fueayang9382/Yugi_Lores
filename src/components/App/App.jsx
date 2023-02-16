@@ -82,7 +82,7 @@ function App() {
                     </ProtectedRoute>
 
                     {/* Tou's work */}
-                    <ProtectedRoute exact path="/epic1">
+                    <ProtectedRoute exact path="/epic1/:id">
                         <Epic1 />
                     </ProtectedRoute>
 

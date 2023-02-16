@@ -54,14 +54,6 @@ function Epic1() {
     };
 
     ///my Delete const:TOU
-    const deleteStory = (storyId, event) => {
-        // event.preventDefault();
-        console.log('what is storyId', storyId);
-        dispatch({
-            type: 'SAGA/DELETE_STORY',
-            payload: storyId,
-        });
-    };
 
     const handleEdit = (story) => {
         history.push(`/epic1/edits/${story.id}`);
@@ -69,6 +61,37 @@ function Epic1() {
 
     const handleLog = () => {
         console.log('this is stories to render:', grabJustOneText);
+    };
+
+    const deleteStory = (oneTextid, event) => {
+        // event.preventDefault();
+        console.log('what is storyId', oneTextid);
+        dispatch({
+            type: 'SAGA/DELETE_STORY',
+            payload: {
+                oneTextid,
+                epic_id: params.id
+            }
+        })
+        // dispatch({
+        //     type: 'SAGA/FETCH_STORY',
+        // });
+
+        const handleEditSubmit = (event)=> {
+            event.target.value
+                dispatch({
+                    type:'UPDATE_STORY',
+                    payload:story
+                })
+                // history.push('/')
+                history.push('/epic1')
+            }
+
+            const handleEdit = (story)=>{
+                history.push(`/epic1/edits/${story.id}`);
+            }
+
+        
     };
 
     return (
@@ -108,9 +131,7 @@ function Epic1() {
                                 >
                                     Delete this description
                                 </button>
-                                <button onClick={() => handleEdit(story)}>
-                                    Edit epic
-                                </button>
+                             
                             </div>
                         );
                     })}
@@ -123,12 +144,18 @@ function Epic1() {
  sync */}
 
 
+
                 {grabJustOneText.map &&
                     grabJustOneText.map((oneText) => {
                         return (
                             <div key={oneText.id}>
                                 <p>{oneText.story_text}</p>
+                                <button onClick={()=> {console.log(` find this log ${oneText.id}`);deleteStory(oneText.id)}}>
+                            Delete this description
+                        </button>
+                        <button onClick={(()=>handleEdit(oneText.id))}>Edit epic</button>
                             </div>
+                            
                         );
                     })}
 

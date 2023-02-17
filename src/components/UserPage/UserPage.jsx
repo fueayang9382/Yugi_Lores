@@ -10,13 +10,14 @@ function UserPage() {
     const user = useSelector((store) => store.user);
     const history = useHistory();
     const image = useSelector((store) => store.imageReducer);
+    const oneText = useSelector((store)=> store.FetchIdText)
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch({
             type: 'SAGA/FETCH_IMAGE',
         });
-        console.log(image);
+        console.log('this is image******',image);
     }, []);
 
     //working  from shong
@@ -43,9 +44,18 @@ function UserPage() {
             {image.map &&
                 image.map((x) => (
                     <div key={x.id} onClick={() => handleStoryPage(x)}>
-                        {x.title}{' '}
+                        {x.title}
                     </div>
                 ))}
+                {/* to render my title */}
+                {/* {oneText.map &&
+                    oneText.map((x)=>(
+                        <div key={x.id} onClick={()=> handleStoryPage(x)}>
+                            {x.title}
+                        </div>
+                    ))} */}
+
+
             <div onClick={() => history.push('/epic1/1')}>
                 <p>
                     <b>Six Samurai</b>

@@ -6,6 +6,7 @@ import storyReducer from './story.reducer';
 import storyToEdit from './storyToEdit';
 import idCardImageReducer from './idCardImage.reducer';
 import FetchIdText from './Fetch.Id.Text.reducer';
+import reducerHolder from './EditHoldStory.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -19,7 +20,8 @@ const rootReducer = combineReducers({
   storyReducer,
   storyToEdit,
   idCardImageReducer,//******** shong
-  FetchIdText
+  FetchIdText,
+  reducerHolder
 });
 
 export default rootReducer;

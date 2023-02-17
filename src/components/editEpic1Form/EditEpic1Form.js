@@ -9,14 +9,15 @@ function EditEpic1Form(){//need to be saga* function?
     const history = useHistory(); 
     const dispatch = useDispatch();//delete if
     const story = useSelector((store) => store.storyToEdit);//delete if
+    const reducerHolder = useSelector((store)=> store.reducerHolder)
     useEffect(() => {
-        console.log('what is params.id:', params.id);
+        console.log('####what is params.id:', params.id);
         dispatch({
             type:'FETCH_EPIC_TO_EDIT',
-            payload: params.id
+            payload: params.id     //params.id
         })
     }, []);//params.id  was taken out
-
+    console.log('####what is params.id:', params.id);
     const handleStoryChange = (event) =>{
         dispatch({
             type: 'SET_STORY_CHANGE',
@@ -31,13 +32,13 @@ function EditEpic1Form(){//need to be saga* function?
             payload:story
         })
         // history.push('/')
-        history.push('/epic1')
+        history.push(`/epic1/${reducerHolder}`)
     }
     return(
         <div>
             <h2>Edit Epic:</h2>
             <form>
-                <p>Matt video on 14:73 on saga function</p>
+                <p>Edit story</p>
                 <input 
                 type="text"  
                 value={story.story_text || ''}

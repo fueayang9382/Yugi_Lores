@@ -55,9 +55,11 @@ function Epic1() {
 
     ///my Delete const:TOU
 
-    const handleEdit = (story) => {
-        history.push(`/epic1/edits/${story.id}`);
-    };
+
+    // const handleEdit = (story)=>{
+    //     console.log('9$$$$$$what is story', story);
+    //     history.push(`/epic1/edits/${story.id}`);  //${story.id}
+    // }
 
     const handleLog = () => {
         console.log('this is stories to render:', grabJustOneText);
@@ -77,22 +79,27 @@ function Epic1() {
         //     type: 'SAGA/FETCH_STORY',
         // });
 
-        const handleEditSubmit = (event)=> {
-            event.target.value
-                dispatch({
-                    type:'UPDATE_STORY',
-                    payload:story
-                })
-                // history.push('/')
-                history.push('/epic1')
-            }
-
-            const handleEdit = (story)=>{
-                history.push(`/epic1/edits/${story.id}`);
-            }
-
-        
+        // const handleEditSubmit = (event)=> {
+        //     event.target.value
+        //         dispatch({
+        //             type:'UPDATE_STORY',
+        //             payload:story
+        //         })
+        //         // history.push('/')
+        //         history.push('/epic1')
+        //     }
     };
+
+
+
+    const handleEdit = (oneText)=>{
+        dispatch({
+            type: 'REDUCER_HOLDER',
+            payload: image.id
+        })
+        console.log('9$$$$$$what is story',oneText);
+        history.push(`/epic1/edits/${oneText.id}`);  //${story.id}
+    }
 
     return (
         <div className="container">
@@ -131,19 +138,10 @@ function Epic1() {
                                 >
                                     Delete this description
                                 </button>
-                                <button onClick={(()=>handleEdit(story))}>Edit epic</button>
+                            
                             </div>
                         );
                     })}
-
-                {/* //Testing n delete if error
-    //Testing n delete if error */}
-
-
-{/* can i use another dispatch or useEffect to render to bring in 
- sync */}
-
-
 
                 {grabJustOneText.map &&
                     grabJustOneText.map((oneText) => {
@@ -153,7 +151,7 @@ function Epic1() {
                                 <button onClick={()=> {console.log(` find this log ${oneText.id}`);deleteStory(oneText.id)}}>
                             Delete this description
                         </button>
-                                <button>Edit</button>
+                                <button onClick={(()=>handleEdit(oneText))}>Edit</button>
                             </div>
                             
                         );
@@ -163,8 +161,26 @@ function Epic1() {
 
 
 
-                {/* //Testing n delete if error
-    //Testing n delete if error */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 {/* <input
                     type="text"

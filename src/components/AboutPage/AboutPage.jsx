@@ -10,11 +10,13 @@ function AboutPage() {
     <div className="container">
       <div>
         <h3>Technology that made this project possible</h3>
+        <p>HTML/CSS</p>
         <p>JavaScript</p>
-        <p>React</p>
+        <p>React JS</p>
         <p>Redux</p>
         <p>Saga</p>
         <p>Postico SQL</p>
+        <p>PostMan</p>
       </div>
     </div>
   );
